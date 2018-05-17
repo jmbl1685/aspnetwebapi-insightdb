@@ -62,5 +62,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\CREATE_SCHEMA_AND_TABLE.sql" />
+    <None Include="Store Procedures\SP_CREATE_LUNCH.sql" />
+    <None Include="Store Procedures\SP_GET_LUNCH.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Store Procedures\SP_UPDATE_LUNCH.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Store Procedures\SP_DELETE_LUNCH.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Store Procedures\SP_GETBYID_LUNCH.sql" />
   </ItemGroup>
 </Project>
