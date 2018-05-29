@@ -4,16 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Application.Entities;
+using Insight.Database;
 
 namespace Application.Repository.impl
 {
     public class LunchRepository : ILunchRepository
     {
-        public Lunch CreateLunch(Lunch lunch)
-        {
-            throw new NotImplementedException();
-        }
-
+        private ILunchRepository _repo = DBConnection.GetConnection().As<ILunchRepository>();
+        public Lunch CreateLunch(Lunch lunch) =>_repo.CreateLunch(lunch);
+        
         public Lunch DeleteLunch(Guid lunchID)
         {
             throw new NotImplementedException();

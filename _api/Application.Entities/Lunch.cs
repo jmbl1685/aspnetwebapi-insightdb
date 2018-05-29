@@ -10,7 +10,7 @@ namespace Application.Entities
     public class Lunch
     {
         [JsonProperty("_id")]
-        public Guid LunchID { get; set; }
+        public Guid LunchID { get; private set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -19,9 +19,16 @@ namespace Application.Entities
         public string Description { get; set; }
 
         [JsonProperty("ingredient")]
-        public List<Ingredient> Ingredient { get; set; }
+        public string Ingredients { get; set; }
 
         [JsonProperty("image")]
-        public List<Image> Image { get; set; }
+        public string Image { get; set; }
+
+        private Guid lunchID
+        {
+            get => LunchID;
+            set => LunchID = Guid.NewGuid();
+        } 
+
     }
 }
