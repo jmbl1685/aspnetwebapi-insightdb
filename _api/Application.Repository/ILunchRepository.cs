@@ -18,12 +18,12 @@ namespace Application.Repository
         Lunch DeleteLunch (Guid lunchID);
 
         [Sql("SP_UPDATE_LUNCH", CommandType.StoredProcedure)]
-        Lunch UpdateLunch (Guid lunchID, Lunch lunch);
+        Lunch UpdateLunch (Guid ID, Lunch lunch);
 
         [Sql("SP_GETBYID_LUNCH", CommandType.StoredProcedure)]
-        Lunch GetByIdLunch (Lunch body);
+        Lunch GetByIdLunch (Guid lunchID);
 
         [Sql("SP_GET_LUNCH", CommandType.StoredProcedure)]
-        List<Lunch> GetLunch (Lunch body);
+        List<Lunch> GetLunch (int? PageNumber, int? PageSize);
     }
 }

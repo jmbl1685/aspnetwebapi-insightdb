@@ -5,6 +5,7 @@
 	@Image VARCHAR(MAX)
 AS
 BEGIN
+	
 	INSERT INTO Application.Lunch
 		(Name,
 		 Description,
@@ -15,4 +16,15 @@ BEGIN
 		 @Description,
 		 @Ingredients,
 		 @Image)
+
+
+	SELECT 
+		Id,
+		LunchID,
+		Name,
+		Description,
+		Ingredients,
+		Image
+	FROM Application.Lunch WHERE Id = SCOPE_IDENTITY()
+
 END
