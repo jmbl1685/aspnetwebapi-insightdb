@@ -12,5 +12,6 @@ namespace Application.WebApi.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class LaunchController : ApiController
     {
+         
     }
 }
