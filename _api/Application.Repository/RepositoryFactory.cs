@@ -9,9 +9,6 @@ namespace Application.Repository
 {
     public static class RepositoryFactory
     {
-        public static LunchRepository GetLunchRepository()
-        {
-            return new LunchRepository();
-        }
+        public static LunchRepository GetLunchRepository() => new LunchRepository();       
     }
 }
