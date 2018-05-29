@@ -131,6 +131,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application.Entities\Application.Entities.csproj">
+      <Project>{A05D6925-9930-41FC-8F5C-80DA7A966311}</Project>
+      <Name>Application.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Application.Repository\Application.Repository.csproj">
+      <Project>{2F47BB7F-5E04-49A6-91D7-0DA10E5D84C0}</Project>
+      <Name>Application.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
