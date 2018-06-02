@@ -12,18 +12,18 @@ namespace Application.Repository
     public interface ILunchRepository
     {
         [Sql("SP_CREATE_LUNCH", CommandType.StoredProcedure)]
-        Lunch CreateLunch (Lunch lunch);
+        Task<Lunch> CreateLunch (Lunch lunch);
 
         [Sql("SP_DELETE_LUNCH", CommandType.StoredProcedure)]
-        Lunch DeleteLunch (Guid lunchID);
+        Task<Lunch> DeleteLunch (Guid lunchID);
 
         [Sql("SP_UPDATE_LUNCH", CommandType.StoredProcedure)]
-        Lunch UpdateLunch (Guid ID, Lunch lunch);
+        Task<Lunch> UpdateLunch (Guid ID, Lunch lunch);
 
         [Sql("SP_GETBYID_LUNCH", CommandType.StoredProcedure)]
-        Lunch GetByIdLunch (Guid lunchID);
+        Task<Lunch> GetByIdLunch (Guid lunchID);
 
         [Sql("SP_GET_LUNCH", CommandType.StoredProcedure)]
-        List<Lunch> GetLunch (int? PageNumber, int? PageSize);
+        Task<List<Lunch>> GetLunch (int? PageNumber, int? PageSize);
     }
 }

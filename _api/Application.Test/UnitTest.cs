@@ -10,17 +10,22 @@ namespace Application.Test
     [TestClass]
     public class UnitTest
     {
-        private static LunchRepository repository = RepositoryFactory.GetLunchRepository();
+        
 
         [TestMethod]
         public void TestMethod()
         {
-            STORE_PROCEDURES_TEST("SP_GET_LUNCH");
+            // You need a database credential to run TEST
+            //STORE_PROCEDURES_TEST("SP_GET_LUNCH");
+
+            Assert.IsTrue(true);
+
         }
 
 
         public void STORE_PROCEDURES_TEST(string sp_name)
         {
+            LunchRepository repository = RepositoryFactory.GetLunchRepository();
 
             switch (sp_name)
             {
@@ -34,11 +39,6 @@ namespace Application.Test
                             Image = "https://cdn.colombia.com/sdi/2011/07/22/ajiaco-496022.jpg;https://www.deliciosi.com/images/1500/1510/ajiaco-de-pollo.jpg;http://elrancherito.com.co/wp-content/uploads/2017/07/Ajiaco.jpg"
                         });
                         Assert.IsNotNull(launch);
-                        break;
-                    }
-                case "SP_DELETE_LUNCH":
-                    {
-                        var launch = repository.DeleteLunch(Guid.Parse("008F08E7-D499-4412-8FFA-937926B49A75"));
                         break;
                     }
                 case "SP_GET_LUNCH":
@@ -61,6 +61,11 @@ namespace Application.Test
                             Ingredients = "Pollo;papa criolla;papa sabanera;papa pastusa;guascas;alcaparras;mazorca de maíz tierno",
                             Image = "https://cdn.colombia.com/sdi/2011/07/22/ajiaco-496022.jpg;https://www.deliciosi.com/images/1500/1510/ajiaco-de-pollo.jpg;http://elrancherito.com.co/wp-content/uploads/2017/07/Ajiaco.jpg"
                         });
+                        break;
+                    }
+                case "SP_DELETE_LUNCH":
+                    {
+                        var launch = repository.DeleteLunch(Guid.Parse("008F08E7-D499-4412-8FFA-937926B49A75"));
                         break;
                     }
             }

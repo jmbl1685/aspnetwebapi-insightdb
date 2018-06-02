@@ -10,8 +10,8 @@ namespace Application.Repository
     public static class DBConnection
     {
         public static SqlConnection GetConnection()
-        {
-            return new SqlConnection();
+        {          
+            return new SqlConnection("{yourconnectionstring}");
         }
     }
 }

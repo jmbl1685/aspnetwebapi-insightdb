@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   getLunchList() {
-    fetch('http://40.114.38.57:9700/_api/Application.WebApi/api/launch')
+    fetch('http://localhost:9700/_api/Application.WebApi/api/lunch')
       .then(res => res.json())
       .then(res => {
         this.setState({ launchList: res })

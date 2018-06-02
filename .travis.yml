@@ -1,0 +1,9 @@
+language: csharp
+
+solution: "./_api/Application.sln"
+
+install:
+- travis_retry nuget restore -source "https://www.nuget.org/api/v2" ./_api/Application.sln
+
+script:
+- xbuild ./_api/Application.sln
